@@ -10,7 +10,12 @@ const bookSchema = new Schema(
         description: {
             type: String
         },
-        author: String,
+        author: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Author'
+            }
+        ],
         rating: {
             type: Number
         }

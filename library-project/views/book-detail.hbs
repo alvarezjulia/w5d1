@@ -1,7 +1,12 @@
 {{!-- Only one object is passed --}}
 <h1>{{book.title}}</h1>
-<span>Written by {{book.author}}</span>
+<span>Written by
+    {{#each book.author}}
+    {{this.firstName}} {{this.lastName}}
+    {{/each}}
+</span>
 <p>Summary: {{book.description}}</p>
 <p>Rating: {{book.rating}}</p>
 
+<a href="/books/edit/{{book._id}}">Edit</a>
 <a href="/books">Return</a>
